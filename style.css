@@ -8,7 +8,7 @@ h1{
     
     text-align: center;
     color: green;
-    padding: 10px;
+    padding: 5px;
 }
 
 h2{
@@ -23,13 +23,11 @@ h3{
 }
 
 nav{
-    background-color: rgb(17, 153, 19);
+    background-color: rgb(126, 251, 128);
     display: grid;
     place-items: center;
 
 }
-
-
 nav ul{
     list-style-type: none;
 }
@@ -96,6 +94,13 @@ nav ul a:hover{
 }
 .item button:hover{
     transform: scale(1.08);
+}
+
+div li{
+    background-color: rgb(126, 251, 128);
+    display: grid;
+    place-items: center;
+
 }
 @media screen and (max-width: 1000px )
 {
