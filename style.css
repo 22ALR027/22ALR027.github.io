@@ -1,153 +1,117 @@
 *{
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-:root{
-    --h1FontColor:#ffffff;
-    --bgColor:#000000;
-    --boardSize:20em;
-    --cellSize: calc(var(--boardSize)/3);
-
-}
-
-body{
-    width: 100%;
-    height: 90vh;
-
     font-family: sans-serif;
-    color: var(--h1FontColor);
-    background-color: var(--bgColor);
-    
-    display: flex;
-    align-items:center;
-    justify-content: center;
-    flex-direction: column;
+    box-sizing: border-box;
 }
-.box{
-    border: 2px solid white;
-    border-radius: 10px;
-    box-shadow: 0px 0px 20px 0px #6bf8ff;
-}
-
 h1{
-    margin-bottom: 2rem;
-    margin-top: 2rem;
-    text-align: center;
-
-}
-
-.board{
-    width: var(--boardSize);
-    height: var(--boardSize);
-
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-
-    margin: 1rem;
-}
-
-.cell{
-    width: var(--cellSize);
-    height: var(--cellSize);
-
-    border: 2px solid white;
     
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-
-.cell:first-child,
-.cell:nth-child(2),
-.cell:nth-child(3){
-    border-top: none;
-}
-
-.cell:nth-child(3n+1){
-    border-left: none;
-}
-.cell:nth-child(3n+3){
-    border-right: none;
-}
-
-.cell.x::before,.cell.x::after{
-    content:'';
-    width: calc(var(--cellSize)*0.05);
-    height: calc(var(--cellSize)*0.5);
-    background-color: rgb(255, 255, 255);
-    transform: rotate(45deg);
-    position: absolute;
-}
-
-.cell:last-child,
-.cell:nth-child(8),
-.cell:nth-child(7){
-    border-bottom: none;
-}
-
-.cell.x::after{
-    transform: rotate(-45deg);
-}
-
-.cell.circle::before{
-    content:'';
-    width: calc(var(--cellSize)*0.4);
-    height: calc(var(--cellSize)*0.4);
-    border-radius: 50%;
-    background-color: black;
-    position:absolute;
-}
-
-.cell.circle::after{
-    content:'';
-    width: calc(var(--cellSize)*0.5);
-    height: calc(var(--cellSize)*0.5);
-    border-radius: 50%;
-    background-color: white;
-}
-
-.result{
-    border: 2px solid white;
-    border-radius: 10px;
-    background-color: #242426;
-
-    width: var(--boardSize);
-    height: calc(var(--boardSize)*0.15);
-    margin: 1rem;
-    margin-top: 2rem;
-
-
-}
-
-.result h2{
     text-align: center;
-    margin: 9px;
-}
-
-button{
-    font-family: inherit;
-    border-radius: 10px;
-    height: 2.5rem;
-    margin: 2px;  
-    text-align: center;
-    font-size: large;
-    font-weight: bold;
+    color: green;
     padding: 5px;
-    width: 120px;
 }
 
-.footer {
+h2{
     text-align: center;
-    align-items: center;
-    position: fixed;
-    width: 100%;
+    color: green;
+    padding: 10px;
+}
+h3{
+    text-align: center;
+    color: green;
+    padding: 10px;
+}
+
+nav{
+    background-color: lime;
+    display: grid;
+    place-items: center;
+
+}
+
+
+nav ul{
+    list-style-type: none;
+}
+nav ul a{
+    display: inline-block;
+    padding: 20px;
+    text-decoration: none;
+    color: #000;
+    transition: 0.2s ease-in;
+    font-size: 18px;
+}
+nav ul a:hover{
+    background-color: green;
     color: white;
-    bottom: 0;
-    background-color: black;
-    font-size: 1rem;
+}
+
+.c-img{
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+.items{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 50px 20px;
+    grid-column-gap: 10px;
+    background: rgb(198, 200, 194);
+
+    
+}
+.item img{
+    height: 70%;
+    width: 90%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: 0.2% ease;
+    
+}
+.a-img{
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(1.0);
+}
+.item img:hover{
+    transform: scale(1.04);
+}
+.item h4{
+    padding: 5px;
     text-align: center;
-    padding: 10px
-  }
-  
+}
+.item button{
+    padding: 5px 30px;
+    border: none;
+    outline: none;
+    background-color: chartreuse;
+    color:white;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 20px;
+    display: block;
+    margin: 0 auto;
+}
+.item button:hover{
+    transform: scale(1.08);
+}
+@media screen and (max-width: 1000px )
+{
+    .items{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 768px )
+{
+    .items{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+@media screen and (max-width: 100px )
+{
+    .c-img{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
